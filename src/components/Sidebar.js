@@ -30,25 +30,54 @@ const Sidebar = () => {
         {
             id: 0,
             avatarIcon: (<Home style={{color:'whitesmoke'}}/>),
-            iconName:'Sample Room' 
+            iconName:'Sample Room',
+            thumbnailImage: '/assets/1.jpeg'
           },
           {
             id: 1,
             avatarIcon: (<AcUnit style={{color:'whitesmoke'}}/>),
-            iconName:'Sample Room' 
+            iconName:'Sample Room',
+            thumbnailImage: '/assets/1.jpeg' 
           },
           {
             id: 2,
             avatarIcon: (<Airplay style={{color:'whitesmoke'}}/>),
-            iconName:'Sample Room' 
+            iconName:'Sample Room',
+            thumbnailImage: '/assets/1.jpeg' 
           },
           {
             id: 3,
             avatarIcon: (<Queue style={{color:'whitesmoke'}}/>),
-            iconName:'Sample Room' 
+            iconName:'Sample Room',
+            thumbnailImage: '/assets/1.jpeg' 
           },]
+      const recommendedCreators=[
+            {
+                id: 0,
+                avatarIcon: (<Home style={{color:'whitesmoke'}}/>),
+                iconName:'Sample Creator',
+                thumbnailImage: '/assets/1.jpeg'
+              },
+              {
+                id: 1,
+                avatarIcon: (<AcUnit style={{color:'whitesmoke'}}/>),
+                iconName:'Sample Creator',
+                thumbnailImage: '/assets/1.jpeg' 
+              },
+              {
+                id: 2,
+                avatarIcon: (<Airplay style={{color:'whitesmoke'}}/>),
+                iconName:'Sample Creator',
+                thumbnailImage: '/assets/1.jpeg' 
+              },
+              {
+                id: 3,
+                avatarIcon: (<Queue style={{color:'whitesmoke'}}/>),
+                iconName:'Sample Creator',
+                thumbnailImage: '/assets/1.jpeg' 
+              },]
     return (
-        <div className="flex bg-[#262626] h-full">
+        <div className="flex bg-[#262626] h-full xlx:hidden">
             <div className="mx-auto my-4">
                 <List >
                     {SidebarEssentials.map((item)=>(
@@ -58,23 +87,49 @@ const Sidebar = () => {
                         </ListItem>
                     ))}
                 </List>
+                {/* Recommeded Rooms */}
                 <div className="mt-4 text-white font-bold text-lg">
                         Recommended Rooms
                 </div>
                 <div className="mt-2">
                     {recommendedRoom.map((item)=>(
                         <ul key={item.id} >
-                            <li className="flex mb-4 justify-between">
-                                <div>
-                                    {item.avatarIcon}
+                            <li className="flex mb-6 items-center justify-between">
+                                <div className="mr-2">
+                                <img src={item.thumbnailImage} alt="" className="rounded-full w-8 h-8"/>
                                 </div>
                                 <div className="text-white">
                                     {item.iconName}
                                 </div>
-                                <button className="bg-blue-700 text-white px-3 font-bold rounded-md">Join</button>
+                                <button className="bg-blue-700 ml-2 text-white px-2 font-bold rounded-md">Join</button>
                             </li>
                         </ul>
                     ))}
+                </div>
+                <div className="mt-2">
+                  <a className="text-purple-600 font-semibold" href="/">Show More</a>
+                </div>
+                {/* Recommended Creators */}
+                <div className="mt-4 text-white font-bold text-lg">
+                        Recommended Creators
+                </div>
+                <div className="mt-2">
+                    {recommendedCreators.map((item)=>(
+                        <ul key={item.id} >
+                            <li className="flex mb-6 items-center justify-between">
+                                <div className="mr-2">
+                                <img src={item.thumbnailImage} alt="" className="rounded-full w-8 h-8"/>
+                                </div>
+                                <div className="text-white">
+                                    {item.iconName}
+                                </div>
+                                <button className="bg-blue-700 ml-2 text-white px-2 font-bold rounded-md">Join</button>
+                            </li>
+                        </ul>
+                    ))}
+                </div>
+                <div className="mt-2">
+                  <a className="text-purple-600 font-semibold" href="/">Show More</a>
                 </div>
             </div>
         </div>
