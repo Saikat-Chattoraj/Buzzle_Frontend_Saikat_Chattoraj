@@ -4,7 +4,7 @@ import {Queue}from '@material-ui/icons';
 import {AcUnit} from '@material-ui/icons';
 import {Airplay} from '@material-ui/icons';
 import {List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-const Sidebar = () => {
+const Sidebar = ({isSidebarOpen}) => {
     const SidebarEssentials=[
     {
         id: 0,
@@ -77,7 +77,7 @@ const Sidebar = () => {
                 thumbnailImage: '/assets/1.jpeg' 
               },]
     return (
-        <div className="flex bg-[#262626] h-full xlx:hidden">
+        <div className="flex bg-[#262626] h-full xlx:hidden" >
             <div className="mx-auto my-4">
                 <List >
                     {SidebarEssentials.map((item)=>(
