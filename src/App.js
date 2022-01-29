@@ -5,9 +5,9 @@ export default function App() {
   return (
     <div className="">
       <Navbar/>
-      <div className="xl:grid-cols-[300px_minmax(900px,_1fr)_100px] grid ">
-      <Sidebar/>
-        <div className="col-start-2 col-end-[max-w-screen]">
+      <div className="flex">
+        <div className="grow w-80 xlx:hidden"> <Sidebar/></div>  
+        <div className="">
         <Feed/>
         </div>
       </div>

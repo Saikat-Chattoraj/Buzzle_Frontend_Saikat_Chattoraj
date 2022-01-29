@@ -1,3 +1,4 @@
+
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -34,7 +35,13 @@ module.exports = {
       // => @media (max-width: 1535px) { ... }  
     },
     
-    extend: {},
+    extend: {
+      transitionDuration:{
+        '600': '600ms',
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    
+  ],
 }
